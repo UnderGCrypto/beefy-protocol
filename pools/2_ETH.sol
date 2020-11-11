@@ -568,7 +568,7 @@ contract LPTokenWrapper {
     using SafeMath for uint256;
     using SafeERC20 for IERC20;
 
-    IERC20 public y = IERC20(0x2170Ed0880ac9A755fd29B2688956BD959F933F8);
+    IERC20 public y = IERC20(0x9bB6E0Ed72F18857320C777be1eB7680630b33cb);
 
     uint256 private _totalSupply;
     mapping(address => uint256) private _balances;
@@ -603,7 +603,7 @@ pragma solidity ^0.5.0;
 
 
 contract RewardPool is LPTokenWrapper, IRewardDistributionRecipient {
-    IERC20 public yfi = IERC20(0xCa3F508B8e4Dd382eE878A314789373D80A5190A);
+    IERC20 public yfi = IERC20(0x04b60A0e6Aa7F9E36754AD8D24A66f47DF0123EE);
     uint256 public constant DURATION = 60 days;
 
     uint256 public periodFinish = 0;
@@ -657,7 +657,7 @@ contract RewardPool is LPTokenWrapper, IRewardDistributionRecipient {
     // stake visibility is public as overriding LPTokenWrapper's stake() function
     function stake(uint256 amount) public updateReward(msg.sender) {
         require(amount > 0, "Cannot stake 0");
-        require(block.timestamp > 1600790400, "Cannot stake yet");
+        require(block.timestamp > 9050152, "Cannot stake yet");
         super.stake(amount);
         emit Staked(msg.sender, amount);
     }
