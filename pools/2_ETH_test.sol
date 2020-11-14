@@ -1,5 +1,5 @@
 /**
- *Submitted for verification at Bscscan.com on 2020-09-20
+ *Submitted for verification at BscScan.com on 2020-09-20
 */
 
 // File: @openzeppelin/contracts/math/Math.sol
@@ -604,7 +604,7 @@ pragma solidity ^0.5.0;
 
 contract RewardPool is LPTokenWrapper, IRewardDistributionRecipient {
     IERC20 public yfi = IERC20(0x04b60A0e6Aa7F9E36754AD8D24A66f47DF0123EE);
-    uint256 public constant DURATION = 60 days;
+    uint256 public constant DURATION = 10 days;
 
     uint256 public periodFinish = 0;
     uint256 public rewardRate = 0;
@@ -657,7 +657,7 @@ contract RewardPool is LPTokenWrapper, IRewardDistributionRecipient {
     // stake visibility is public as overriding LPTokenWrapper's stake() function
     function stake(uint256 amount) public updateReward(msg.sender) {
         require(amount > 0, "Cannot stake 0");
-        require(block.timestamp > 9050152, "Cannot stake yet");
+        require(block.timestamp > 9067077, "Cannot stake yet");
         super.stake(amount);
         emit Staked(msg.sender, amount);
     }
