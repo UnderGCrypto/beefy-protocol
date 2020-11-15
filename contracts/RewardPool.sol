@@ -61,7 +61,7 @@ contract RewardPool is LPTokenWrapper, IRewardDistributionRecipient {
     // stake visibility is public as overriding LPTokenWrapper's stake() function
     function stake(uint256 amount) public updateReward(msg.sender) {
         require(amount > 0, "Cannot stake 0");
-        require(block.timestamp > 1600790400, "Cannot stake yet");
+        require(block.timestamp > 9074288, "Cannot stake yet");
         super.stake(amount);
         emit Staked(msg.sender, amount);
     }
